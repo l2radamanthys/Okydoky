@@ -14,20 +14,20 @@
         <property name="tab_pos">left</property>
         <property name="scrollable">True</property>
         <property name="tab_border">3</property>
-        <property name="group_id">1</property>
+        <property name="group_id">5</property>
         <property name="homogeneous">True</property>
         <child>
           <widget class="GtkFixed" id="fixed3">
             <property name="visible">True</property>
             <child>
               <widget class="GtkImage" id="image1">
-                <property name="width_request">100</property>
-                <property name="height_request">80</property>
+                <property name="width_request">178</property>
+                <property name="height_request">153</property>
                 <property name="visible">True</property>
+                <property name="pixbuf">imagenes/logov2.png</property>
               </widget>
               <packing>
-                <property name="x">38</property>
-                <property name="y">41</property>
+                <property name="x">15</property>
               </packing>
             </child>
           </widget>
@@ -35,8 +35,7 @@
         <child>
           <widget class="GtkLabel" id="label7">
             <property name="visible">True</property>
-            <property name="xalign">0.54000002145767212</property>
-            <property name="label" translatable="yes">Recibidos</property>
+            <property name="label" translatable="yes">Inicio</property>
           </widget>
           <packing>
             <property name="position">3</property>
@@ -173,18 +172,6 @@
         <child>
           <widget class="GtkFixed" id="fixed1">
             <property name="visible">True</property>
-            <child>
-              <widget class="GtkImage" id="image2">
-                <property name="width_request">195</property>
-                <property name="height_request">151</property>
-                <property name="visible">True</property>
-                <property name="pixbuf">logov2.png</property>
-              </widget>
-              <packing>
-                <property name="x">80</property>
-                <property name="y">40</property>
-              </packing>
-            </child>
           </widget>
           <packing>
             <property name="position">3</property>
@@ -193,7 +180,7 @@
         <child>
           <widget class="GtkLabel" id="label3">
             <property name="visible">True</property>
-            <property name="label" translatable="yes">Inicio</property>
+            <property name="label" translatable="yes">Recividos</property>
           </widget>
           <packing>
             <property name="position">3</property>
