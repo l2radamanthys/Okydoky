@@ -42,7 +42,15 @@ class MsjList:
 
 
     def export_to_txt(self, file_name="mensajes.txt"):
+        """
+            exporta todos los mensajes a un archivo de texto plano
+        """
         file = open(file_name, 'w')
+        file.write('\n  Listado de Mensajes \n\n')
+        for msj in self.__mensajes.itervalues():
+            txt = msj.format()
+            file.write('\n\n' + txt)
+        file.close()
 
 
     # Metodos Especiales
