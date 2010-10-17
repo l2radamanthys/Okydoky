@@ -4,7 +4,7 @@
 DOMAIN = "www.okeyko.com"
 LOGIN_URL = "/nv02/validar_usuario.php"
 BUSCA_FILTRADO = "/busca_filtrado.php"
-SEND_OKY = "/nv02/upd_mensaje.php"
+SEND_OKY = "/upd_mensaje.php"
 
 
 NAV_HEADERS = {

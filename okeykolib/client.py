@@ -98,9 +98,9 @@ class OkeykoClient:
                 }
                 params = urllib.urlencode(dict)
                 response = get_response(SEND_OKY, params, True, self.__cookies, True, True)
-                #data = response.read()
-                #data_log(data, True)
-
+                data = response.read()
+                data_log(data, False)
+                return data
 
 
     def send_foky(self, c_area="", num_cel=""):

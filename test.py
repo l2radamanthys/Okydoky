@@ -13,9 +13,8 @@ from okeykolib.client import OkeykoClient
 
 def main():
     c = OkeykoClient()
-    e,m = c.login("l2radamanthys", "inmortal")
-    print m
-    #c.send_oky("l2radamanthys", "mensaje de prueba")
+    e,m = c.login("test_user", "test_user")
+    print c.send_oky("l2radamanthys", "mensaje de prueba")
     #c.logout()
 
 
