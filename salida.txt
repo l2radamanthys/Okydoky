@@ -1,0 +1,5 @@
+<img src="sexyimages/blanco/loading.gif" width="56" height="21" /> | Espere por favor...<br>Has iniciado sesion exitosamente @l2radamanthys		
+			<SCRIPT LANGUAGE="javascript">
+			location.href = "boceto.php";
+			</SCRIPT>
+             

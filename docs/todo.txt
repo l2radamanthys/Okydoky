@@ -1,14 +1,19 @@
 06/10/10
-	Creada la interfaz base del cliente Okeyko.. yo planteo una interfaz mas sencialla
-y menos orientada a un comportamiento estilo emeseene y mas al de una api sencilla.. la 
+    Creada la interfaz base del cliente Okeyko.. yo planteo una interfaz mas sencialla
+y menos orientada a un comportamiento estilo emeseene y mas al de una api sencilla.. la
 libreria que me pasaron al parecer emula el comportamiento de un navegador web habria que
 ver q tan estencible se puede hacer el mismo.
 
-	A la fecha tengo planteado implementar las siguientes funcionalidades:
-		- envio de mensajes
-		- recividos
-		- enviados
-		- favoritos
-		- [ Foky SMS ]
-		- [ pub muro ]
-		
+    A la fecha tengo planteado implementar las siguientes funcionalidades:
+        - envio de mensajes
+        - recividos
+        - enviados
+        - favoritos
+        - [ Foky SMS ]
+        - [ pub muro ]
+
+
+07/10/10
+    Empece a modificar y estender la okeyko lib.. por desgracia por ahora no
+puedo hacer mucho..al parecer la pagina de okeyko esta en mantenimiento :(.
+sigo con la interfaz.

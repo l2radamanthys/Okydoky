@@ -2,8 +2,139 @@
 <glade-interface>
   <!-- interface-requires gtk+ 2.16 -->
   <!-- interface-naming-policy project-wide -->
+  <widget class="GtkDialog" id="frm_login">
+    <property name="border_width">5</property>
+    <property name="type_hint">normal</property>
+    <property name="has_separator">False</property>
+    <child internal-child="vbox">
+      <widget class="GtkVBox" id="dialog-vbox1">
+        <property name="visible">True</property>
+        <property name="spacing">2</property>
+        <child>
+          <widget class="GtkVBox" id="vbox1">
+            <property name="visible">True</property>
+            <property name="spacing">5</property>
+            <child>
+              <widget class="GtkImage" id="image1">
+                <property name="visible">True</property>
+                <property name="pixbuf">imagenes/logov2.png</property>
+              </widget>
+              <packing>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkHBox" id="hbox1">
+                <property name="visible">True</property>
+                <property name="spacing">5</property>
+                <child>
+                  <widget class="GtkVBox" id="vbox2">
+                    <property name="visible">True</property>
+                    <property name="spacing">5</property>
+                    <child>
+                      <widget class="GtkLabel" id="label1">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Usuario:</property>
+                      </widget>
+                      <packing>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="label2">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Contrase&#xF1;a:</property>
+                      </widget>
+                      <packing>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkVBox" id="vbox3">
+                    <property name="visible">True</property>
+                    <property name="spacing">5</property>
+                    <child>
+                      <widget class="GtkEntry" id="edt_nombre">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="invisible_char">&#x25CF;</property>
+                      </widget>
+                      <packing>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="GtkEntry" id="edt_contrasenia">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="invisible_char">&#x25CF;</property>
+                      </widget>
+                      <packing>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child internal-child="action_area">
+          <widget class="GtkHButtonBox" id="dialog-action_area1">
+            <property name="visible">True</property>
+            <property name="layout_style">end</property>
+            <child>
+              <widget class="GtkButton" id="button1">
+                <property name="label" translatable="yes">Conectarse</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkButton" id="button2">
+                <property name="label" translatable="yes">Salir</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
   <widget class="GtkWindow" id="frm_okydoky">
-    <property name="width_request">350</property>
+    <property name="width_request">450</property>
     <property name="height_request">250</property>
     <property name="title" translatable="yes">Okydoky - Cliente Okeyko</property>
     <property name="resizable">False</property>
@@ -20,17 +151,36 @@
           <widget class="GtkFixed" id="fixed3">
             <property name="visible">True</property>
             <child>
-              <widget class="GtkImage" id="image1">
-                <property name="width_request">178</property>
-                <property name="height_request">153</property>
+              <widget class="GtkImage" id="image2">
+                <property name="width_request">256</property>
+                <property name="height_request">94</property>
                 <property name="visible">True</property>
                 <property name="pixbuf">imagenes/logov2.png</property>
               </widget>
               <packing>
-                <property name="x">15</property>
+                <property name="x">32</property>
+                <property name="y">13</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkButton" id="button5">
+                <property name="label" translatable="yes">Acerca de..</property>
+                <property name="width_request">119</property>
+                <property name="height_request">35</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="xalign">0.49000000953674316</property>
+              </widget>
+              <packing>
+                <property name="x">111</property>
+                <property name="y">191</property>
               </packing>
             </child>
           </widget>
+          <packing>
+            <property name="position">1</property>
+          </packing>
         </child>
         <child>
           <widget class="GtkLabel" id="label7">
@@ -38,7 +188,6 @@
             <property name="label" translatable="yes">Inicio</property>
           </widget>
           <packing>
-            <property name="position">3</property>
             <property name="tab_fill">False</property>
             <property name="type">tab</property>
           </packing>
@@ -55,10 +204,12 @@
               </widget>
             </child>
             <child>
-              <widget class="GtkComboBox" id="combobox1">
+              <widget class="GtkComboBox" id="cbox_oky_dest">
                 <property name="width_request">160</property>
-                <property name="height_request">20</property>
+                <property name="height_request">25</property>
                 <property name="visible">True</property>
+                <property name="wrap_width">1</property>
+                <property name="items" translatable="yes">test</property>
               </widget>
               <packing>
                 <property name="x">47</property>
@@ -66,7 +217,7 @@
               </packing>
             </child>
             <child>
-              <widget class="GtkTextView" id="txt_oky">
+              <widget class="GtkTextView" id="txt_send_oky">
                 <property name="width_request">198</property>
                 <property name="height_request">153</property>
                 <property name="visible">True</property>
@@ -95,7 +246,7 @@
               </packing>
             </child>
             <child>
-              <widget class="GtkButton" id="button1">
+              <widget class="GtkButton" id="button3">
                 <property name="label" translatable="yes">Limpiar</property>
                 <property name="width_request">90</property>
                 <property name="height_request">34</property>
@@ -109,7 +260,7 @@
               </packing>
             </child>
             <child>
-              <widget class="GtkButton" id="button2">
+              <widget class="GtkButton" id="button4">
                 <property name="label" translatable="yes">Enviar Oky</property>
                 <property name="width_request">90</property>
                 <property name="height_request">34</property>
@@ -128,7 +279,7 @@
           </packing>
         </child>
         <child>
-          <widget class="GtkLabel" id="label1">
+          <widget class="GtkLabel" id="label3">
             <property name="visible">True</property>
             <property name="label" translatable="yes">Escribir un Oky</property>
           </widget>
@@ -159,9 +310,9 @@
           </packing>
         </child>
         <child>
-          <widget class="GtkLabel" id="label2">
+          <widget class="GtkLabel" id="label5">
             <property name="visible">True</property>
-            <property name="label" translatable="yes">Foky SMS</property>
+            <property name="label" translatable="yes">Recividos</property>
           </widget>
           <packing>
             <property name="position">2</property>
@@ -178,12 +329,12 @@
           </packing>
         </child>
         <child>
-          <widget class="GtkLabel" id="label3">
+          <widget class="GtkLabel" id="label4">
             <property name="visible">True</property>
-            <property name="label" translatable="yes">Recividos</property>
+            <property name="label" translatable="yes">Foky SMS</property>
           </widget>
           <packing>
-            <property name="position">3</property>
+            <property name="position">2</property>
             <property name="tab_fill">False</property>
             <property name="type">tab</property>
           </packing>
@@ -197,9 +348,9 @@
           </packing>
         </child>
         <child>
-          <widget class="GtkLabel" id="label5">
+          <widget class="GtkLabel" id="label11">
             <property name="visible">True</property>
-            <property name="label" translatable="yes">Favoritos</property>
+            <property name="label" translatable="yes">Enviados</property>
           </widget>
           <packing>
             <property name="position">5</property>
@@ -216,9 +367,9 @@
           </packing>
         </child>
         <child>
-          <widget class="GtkLabel" id="label4">
+          <widget class="GtkLabel" id="label10">
             <property name="visible">True</property>
-            <property name="label" translatable="yes">Enviados</property>
+            <property name="label" translatable="yes">Favoritos</property>
           </widget>
           <packing>
             <property name="position">5</property>

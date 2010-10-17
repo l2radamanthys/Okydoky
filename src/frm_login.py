@@ -20,15 +20,11 @@ class Form:
 
         #extraemos el referente a la ventana
         #remplace frm_* por el nombre de la ventana que quiere manejar con esta clase
-        self.ventana = self.xml.get_widget('frm_okydoky')
+        self.ventana = self.xml.get_widget('frm_login')
 
         #-----------------------------Elementos -----------------------------#
         #estraiga aqui los elementos con los cuales trabajara, por ejemplos cajas de texto
         #botones con eventos especiales, tablas, etc.
-        self.oky_view = self.xml.get_widget('txt_send_oky')
-        viewBgCol = gtk.gdk.color_parse ("#32A2DD")
-        self.oky_view.modify_bg(gtk.STATE_NORMAL, viewBgCol)
-        #self.oky_view.modify_fg(gtk.STATE_NORMAL, viewBgCol)
 
         #none
 

@@ -8,6 +8,7 @@ import gtk
 from gtk import glade
 
 import src.frm_okydoky as frm_okydoky
+import src.frm_login as frm_login
 
 
 class MiApp:
@@ -19,8 +20,9 @@ class MiApp:
         #Aplicacion principal
         #llame aqui a todas las ventanas que utilizara por ejemplo:
         self.frm_okydoky = frm_okydoky.Form(self.xml)
+        self.frm_login = frm_login.Form(self.xml)
         self.frm_okydoky.show(True)
-
+        self.frm_login.show(True)
 
     def main(self):
         #pasar el control principal a GTK

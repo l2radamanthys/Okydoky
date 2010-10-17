@@ -2,9 +2,10 @@
 # -*- coding: utf-8 -*-
 
 
+import urllib
 from constant import *
-from utils import get_response
-
+from utils import *
+from excepciones import *
 
 class OkeykoClient:
     def __init__(self, user="", pswr=""):
@@ -13,40 +14,93 @@ class OkeykoClient:
         self.__cokies = None
         self.__conec_status = False #estado de la conecion
 
-        if user != "" and pswr != "":
-            self.connecting(user, pswr)
+
+    def set_cokies(self):
+        if self.__user != "" and self.__pswr != "":
+            dict = {
+                'usuario': self.__user,
+                'clave': self.__pswr,
+                'signin_submit': 'Inicio',
+                'remember_me': '1'
+            }
+            params = urllib.urlencode(dict)
+            response = get_response(LOGIN_URL, params, True, None, True, True)
+            self.__cookies = response.getheader("set-cookie")
+            data = response.read()
+            response.close()
+
+            pos = data.find("Has iniciado")
+            if pos != -1:
+                self.__conec_status = True
+                return True, data.split("\n")[0][pos:]
+            else:
+                self.__conec_status = False
+                return False, "Password o Usuario incorrecto"
+                #raise LoginError(self.__user, self.__pswr)
+
+        else:
+            raise LoginError(self.__user, self.__pswr)
+            self.__conec_status = False
 
 
-    def connecting(self, user="", pswr=''):
+    def login(self, user="", pswr=''):
         """
             iniciar conecion con el servidor
         """
-        pass
+        if not(self.conection_status()):
+            self.__user = user
+            self.__pswr = pswr
+            if self.__user != "" and self.__pswr != "":
+                return self.set_cokies()
+            else:
+                raise ParamError()
 
 
-    def disconnect(self):
+    def logout(self):
         """
             terminar conecion
         """
         pass
 
 
-    def set_cokie(self):
-        pass
+    def get_url_data(self, url):
+        #equivalente a pagina() en la version original
+        if self.__conec_status:
+            response = get_response(url=url, cookie=self.__cokies)
+            data = response.read()
+            response.close()
+            return data
+        else:
+            raise ConectionError()
 
 
     def conection_status(self):
         """
             Estado de la conecion
         """
-        pass
+        return self.__conec_status
 
 
     def send_oky(self, dest="@", txt=""):
         """
             Enviar un Oky
         """
-        pass
+        if self.__conec_status:
+            dest = dest.replace("@", "")#destinatario
+            txt = unicode( txt, "utf-8").encode("iso-8859-1")
+            if len(txt) > 250: #pronto implement msj multipart
+                return False, "la longitud del Mensaje Excede los 250 caracteres"
+            else:
+                dict = {
+                    'para': dest,
+                    'message1': txt,
+                    'Submit': 'Enviar Oky'
+                }
+                params = urllib.urlencode(dict)
+                response = get_response(SEND_OKY, params, True, self.__cookies, True, True)
+                #data = response.read()
+                #data_log(data, True)
+
 
 
     def send_foky(self, c_area="", num_cel=""):
@@ -91,6 +145,7 @@ class OkeykoClient:
             devuelve todos los mensajes marcados como faboritos o importantes
         """
         pass
+
 
 
 

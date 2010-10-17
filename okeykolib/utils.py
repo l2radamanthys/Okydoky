@@ -2,21 +2,19 @@
 # -*- coding: utf-8 -*-
 
 
+import os
 #import urllib
 import httplib
 
-from constantes import DOMAIN
+from constant import DOMAIN, NAV_HEADERS
 
 
 def get_response(url='', params=None, ref=False, cookie=None, ctype=False, clength=False):
     """
-
     """
-
     headers = NAV_HEADERS.copy()
-
     if ref:
-        headers["Referer"] = DOMAIN + "/default.php"
+        headers["Referer"] = "http://www.okeyko.com/default.php"
     if cookie:
         headers["Cookie"] = cookie
     if ctype:
@@ -29,7 +27,6 @@ def get_response(url='', params=None, ref=False, cookie=None, ctype=False, cleng
         connection.request("POST", url, params, headers)
     else:
         connection.request("GET", url, params, headers)
-
     return connection.getresponse()
 
 
@@ -56,3 +53,15 @@ def toEntities(str):
     #str = unicode(str, "utf-8")
     #print "pos %s" % (str)
     return str
+
+
+def data_log(data, nav=False):
+    """
+        solo para debug
+    """
+    f = open('salida.html', 'w')
+    f.write(data)
+    f.close()
+    if nav:
+        os.system('google-chrome salida.html')
+
